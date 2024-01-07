@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    
+    <h1>Marcas</h1>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon2">Marca</span>
+            </div>
+            <input id= "brandName" type="text" class="form-control" aria-describedby="basic-addon2">
+            <button class="btn btn-primary" onclick="getBrands()">Buscar</button> 
+        </div>
+
+    <table id="brandT" data-toggle="table" class="table table-sm container-fluid">
+        <thead class="table-dark">
+            <tr>
+                <th data-field="id" data-sortable="true">No.</th>
+                <th data-field="name" data-sortable="true">Nombre</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="row align-items-end">
+        <div class="col align-self-end">
+            <button class="btn btn-success" onclick="createBrand()">Agregar Marca</button> 
+            <!-- 
+                Se comenta ya que el servicio no tiene funcionalidad para eliminar marcas
+                <button class="btn btn-danger">Eliminar Marca</button> 
+            -->
+        </div>
+    </div>
+</div>

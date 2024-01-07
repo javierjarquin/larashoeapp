@@ -1,0 +1,77 @@
+<html>
+    <head>
+            <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../node_modules/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" >
+ 
+    </head>
+    <body >
+      <div class="container-fluid d-flex justify-content-center">
+        <form id="fnewProduct">
+            <div class="form-group">
+              <label for="modelId">Modelos</label>
+              <select id="modelId" name="modelId" class="form-select" aria-label="marcas" >
+                <option selected value="">Selecciona un Modelo</option>
+              </select>             
+            </div>
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" class="form-control" id="name" name="name" aria-describedby="ModelHelp" placeholder="Nombre">    
+            </div>
+            <div class="form-group">
+              <label for="description">Descripción</label>
+              <input type="text" class="form-control" id="description" name="description" aria-describedby="ModelHelp" placeholder="Descripción">    
+            </div>
+            <div class="form-group">
+              <label for="typeProduct">Seleccione el tipo de Producto</label>
+              <select id="typeProduct" name ="typeProduct" class="form-select" aria-label="tipoProductos">
+                <option value="CA">Calzado</option>
+                <option value="JU">Juguetes</option>
+                <option value="MO">Mochilas</option>
+                <option value="RO">Ropa</option>
+            </select>
+            </div>
+            <div class="form-group">
+              <label for="status">Seleccione el estatus</label>
+              <select id="status" name="status" class="form-select" aria-label="estatus">
+              <option value="AC">Disponibles</option>
+              <option value="IA">No Disponibles</option>
+          </select>
+          </div>
+            <div class="form-group">
+              <label for="gender">Géneros</label>
+              <select id="gender" name="gender" class="form-select" aria-label="generos">
+                  <option selected value="">Todos los Géneros</option>
+                  <option value="CA">Caballero</option>
+                  <option value="DA">Dama</option>
+                  <option value="NO">Niño</option>
+                  <option value="NA">Niña</option>
+                  <option value="UX">Unisex</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="unit">Unidad de medida</label>
+              <select id="unit" name="unit" class="form-select" aria-label="unidades de medida">
+                  <option selected value="">Todos las unidades</option>
+                  <option value="PI">Pieza</option>
+                  <option value="CO">Corrida</option>
+                  <option value="Mochilas">Media Corrida</option>
+              </select>
+          </div>
+            <br>
+            <div class="text-center">
+            <button class="btn btn-primary" onclick="newProduct()">Guardar</button>
+            <button class="btn btn-danger" onclick="closeProduct()">Cancelar</button>
+          </div>
+          </form>
+      </div>
+          <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>  
+          <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>           
+          <script src="../controller/brandController.js"></script>
+          <script src="../controller/productController.js"></script>
+          <script src="../controller/loadModels.js"></script>
+    </body>
+</html>

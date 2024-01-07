@@ -1,0 +1,57 @@
+<html>
+    <head>
+            <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../node_modules/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" >
+ 
+    </head>
+    <body >
+      <div class="container-fluid d-flex justify-content-center">
+        <form id="fnewModel">
+            <div class="form-group">
+              <label for="brandId">Modelo</label>
+              <select id="brandId" name="brandId" class="form-select" aria-label="modelos" >
+                <option selected value="">Selecciona una marca</option>
+              </select>
+              <label for="name">Descripción</label>
+              <input type="text" class="form-control" id="name" name="name" aria-describedby="ModelHelp" placeholder="Escribe el nombre del Modelo">
+              <small id="modelHelp" class="form-text text-muted">  </small>
+              
+            </div>
+            <div class="form-group">
+              <label for="version">Version</label>
+              <input type="text" class="form-control" id="version" name="version" aria-describedby="versionHelp" placeholder="Escribe la version">
+              <small id="versionHelp" class="form-text text-muted">Los nombres de los modelos están asociados a los productos</small>
+            </div>
+            <div class="form-group">
+              <label for="gender">Géneros</label>
+              <select id="gender" name="gender" class="form-select" aria-label="generos">
+                  <option selected value="">Todos los Géneros</option>
+                  <option value="CA">Caballero</option>
+                  <option value="DA">Dama</option>
+                  <option value="NO">Niño</option>
+                  <option value="NA">Niña</option>
+                  <option value="UX">Unisex</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="file_base64">Cargar Archivo</label>
+              <input type="file" class="form-control" id="file_base64" name="file_base64">
+          </div>
+            <br>
+            <div class="text-center">
+            <button class="btn btn-primary" onclick="newModel()">Guardar</button>
+            <button class="btn btn-danger" onclick="closeModel()">Cancelar</button>
+          </div>
+          </form>
+      </div>
+          <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>  
+          <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+          <script src="../controller/modelController.js"></script>
+          <script src="../controller/brandController.js"></script>
+          <script src="../controller/loadBrands.js"></script>
+    </body>
+</html>

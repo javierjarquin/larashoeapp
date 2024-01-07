@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+    <title>Formulario de Orden de Compra</title>
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../node_modules/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Nueva Orden de Compra</h1>
+        <form id="fnewPurchaseOrder">
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="code" class="form-label">Alias</label>
+                    <input type="text" class="form-control" id="code" name="code">
+                </div>
+                <div class="col-md-2">
+                    <label for="arrivalDate" class="form-label">Fecha de Entrega</label>
+                    <input type="datetime-local" class="form-control" id="arrivalDate" name="arrivalDate">
+                </div>
+                <div class="col-md-2">
+                    <label for="totalOrder" class="form-label">SubTotal</label>
+                    <input type="text" class="form-control" id="totalOrder" name="totalOrder">
+                </div>
+                <div class="col-md-2">
+                    <label for="guide" class="form-label">Guía de Envío</label>
+                    <input type="text" class="form-control" id="guide" name="guide">
+                </div>
+                <div class="col-md-2">
+                    <label for="totalImport" class="form-label">Total + Envío</label>
+                    <input type="text" class="form-control" id="totalImport" name="totalImport">
+                </div>
+                <div class="col-md-2">
+                    <label for="providerId" class="form-label">Seleccione Proveedor</label>
+                    <select id="providerId" name="providerId" class="form-select" aria-label="tipos de proveedores">
+                        <!-- Options del select -->
+                    </select>
+                </div>
+                <!-- Agrega más columnas aquí para más campos -->
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-primary me-3" onclick="newPurchaseOrder()">Guardar</button>
+                <button class="btn btn-danger" onclick="closeOrder()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../controller/brandController.js"></script>
+    <script src="../controller/purchaseOrderController.js"></script>
+    <script src="../controller/loadProvider.js"></script>
+</body>
+</html>

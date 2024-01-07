@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Order de Compra</title>
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../node_modules/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-left mb-4">Orden de compra</h1>
+        <form id="fnewPurchaseOrder">
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="orderid" class="form-label">Código</label>
+                    <input type="text" class="form-control" id="orderid" name="orderid" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="code" class="form-label">Alias</label>
+                    <input type="text" class="form-control" id="code" name="code" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="arrivalDate" class="form-label">Fecha de Entrega</label>
+                    <input type="datetime-local" class="form-control" id="arrivalDate" name="arrivalDate" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="totalOrder" class="form-label">Total</label>
+                    <input type="text" class="form-control" id="totalOrder" name="totalOrder" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="guide" class="form-label">Guía de Envío</label>
+                    <input type="text" class="form-control" id="guide" name="guide">
+                </div>
+                <div class="col-md-2">
+                    <label for="totalImport" class="form-label">$ Envío</label>
+                    <input type="text" class="form-control" id="totalImport" name="totalImport">
+                </div>
+                <div class="col-md-2">
+                    <label for="providerId" class="form-label">Seleccione Proveedor</label>
+                    <select id="providerId" name="providerId" class="form-select" aria-label="tipos de proveedores" disabled>
+                        <!-- Options del select -->
+                    </select>
+                </div>
+                <div class="col-md-2">         
+                    <label for="status" class="form-label">Estatus</label>    
+                    <select id="status" class="form-select" aria-label="estatus" disabled>
+                            <option value="PE">En Proceso</option> <!-- Recién creado -->
+                            <option value="AT">Autorizado</option> <!-- Cuando presionan el botón de aprobar -->
+                            <option value="PA">Pagado</option> <!-- cuando presionar Pagado y enviado -->
+                            <option value="EN">Enviado</option> <!-- Cuando empiezan a recibir el pedido -->
+                            <option value="PR">Parcialmente Recibido</option> <!-- Cuando empiezan a recibir el pedido -->
+                            <option value="CM">Completado</option> <!-- cuando se reciben todos los productos de la orden de compra -->
+                            <option value="CA">Cancelada</option> <!-- Cuando se cancela el pedido-->
+                        </select>
+                </div>
+                <div class="col-md-2" style="display: none;">
+                    <label for="modelId" class="form-label" >Seleccione modelos</label>
+                    <select id="modelId" name="modelId" class="form-select" aria-label="tipos de modelos">
+                        <!-- Options del select -->
+                    </select>
+                </div>
+                <div class="col-md-2" style="display: none;">
+                    <label for="productId" class="form-label" >Seleccione Producto</label>
+                    <select id="productId" name="productId" class="form-select" aria-label="tipos de proveedores">
+                        <!-- Options del select -->
+                    </select>
+                </div>
+                
+            </div>
+            <div>
+                <h2>Productos</h2>
+                <table id="orderProductT" data-toggle="table" class="table table-sm container-fluid">
+                    <thead class="table-dark">
+                        <tr>
+                            <th data-field="id">No.</th>
+                            <th data-field="productId" data-formatter="productformatter">Producto</th>
+                            <th data-field="quantity">Cantidad</th>
+                            <th data-field="unit" data-formatter="unitformatter">Medida</th>
+                            <th data-field="unitCost">$ Precio</th>
+                            <th data-field="unitCostPlus">$ Envío</th> <!--Se calcula en automático-->
+                            <!--<th data-field="unitCostSalePercent">% Ganancia</th> -->
+                            <th data-field="totalCost">$ Total</th> <!--Se calcula en automático-->
+                            <!--<th data-field="unitTotalSale">$ Venta</th> Se calcula en automático-->
+                            <th data-field="guide">Guia</th>
+                            <th data-field="arrivalDate">Envío</th>
+                            <th data-field="isShippet" data-formatter="shippetformatter">Enviado?</th> <!--Se palomea cuando se paga boton-->
+                            <th data-field="isReceive" data-formatter="receiveformatter">Recibido?</th><!--Se palomea en automatico cuando se reciben todos los productos-->
+                            <th data-field="isPayment" data-formatter="paymentformatter">Pagado?</th> <!--Se palomea cuando se paga boton-->               
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            
+            <!-- Agrega más columnas aquí para más campos -->
+         
+            
+   
+        </form>
+        <div class="d-flex justify-content-between flex-wrap mt-4">
+            <div>
+                <button class="btn btn-info me-3" onclick="aprovedOrder()">Autorizar</button>
+                <button class="btn btn-success me-3" onclick="paymentOrder()">Pagar</button> 
+                <button class="btn btn-warning me-3" onclick="sendOrder()">Enviado</button> 
+            </div>
+            <div>
+                <button class="btn btn-success me-3" onclick="addOrderProduct()">Agregar Producto</button>
+            </div>
+        </div>
+    </div>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../controller/brandController.js"></script>
+    <script src="../controller/purchaseOrderController.js"></script>
+    <script src="../controller/loadProducts.js"></script>
+</body>
+</html>

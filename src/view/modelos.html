@@ -1,0 +1,49 @@
+
+<div class="container-fluid">
+    <h1>Modelos</h1>
+
+    <div class="input-group mb-3">
+        <select id="brandId" class="form-select" aria-label="marcas">
+            <option value="">Selecciona una marca</option>
+        </select>
+        
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Modelo</span>
+        </div>
+        <input id= "name" type="text" class="form-control" aria-describedby="basic-addon1">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon2">Version</span>
+        </div>
+        <input id= "version" type="text" class="form-control" aria-describedby="basic-addon2">
+        <select id="gender" class="form-select" aria-label="generos">
+            <option value="">Todos los Géneros</option>
+            <option value="CA">Caballero</option>
+            <option value="DA">Dama</option>
+            <option value="NO">Niño</option>
+            <option value="NA">Niña</option>
+            <option value="UX">Unisex</option>
+        </select>
+        <button class="btn btn-primary" onclick="getModels()">Buscar</button> 
+    </div>
+    <table id="modelsT" data-toggle="table" class="table table-sm container-fluid">
+        <thead class="table-dark">
+            <tr>
+                <th data-field="id" data-width="50">No.</th>
+                <th data-field="brandId"  data-formatter="brandFormatter" data-width="180">Marca</th>
+                <th data-field="name">Modelo</th>
+                <th data-field="version">Version</th>
+                <th data-field="gender" data-formatter="genderFormatter" data-width="150">Genero</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="row align-items-end">
+        <div class="col align-self-end">
+            <button class="btn btn-success" onclick="createModel()">Agregar Modelo</button> 
+            <!-- 
+                Se comenta ya que el servicio no tiene funcionalidad para eliminar marcas
+                <button class="btn btn-danger">Eliminar Marca</button> 
+            -->
+        </div>
+    </div>
+    
+</div>

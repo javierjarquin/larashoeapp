@@ -1,0 +1,71 @@
+   /* Additional Styles for Sidebar */
+   body {
+    font-family: Arial, sans-serif;
+  }
+
+  .wrapper {
+    display: flex;
+  }
+
+  #sidebar {
+    min-width: 200px;
+    max-width: 200px;
+    background: #252440;
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  #sidebar.active {
+    margin-left: -250px;
+  }
+
+  #sidebar .sidebar-header {
+    padding: 20px;
+    background: #212529;
+  }
+
+  #sidebar ul.components {
+    padding: 10px 0;
+    border-bottom: 1px solid #2f2c79;
+  }
+
+  #sidebar ul p {
+    padding: 20px;
+    font-size: 1.1em;
+    display: block;
+  }
+
+  #sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: #fff;
+  }
+
+  #sidebar ul li a:hover {
+    color: #fff;
+    background: #6d7fcc;
+  }
+
+  /* Content */
+  #content {
+    width: 100%;
+    padding: 20px;
+    transition: all 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -200px;
+    }
+
+    #sidebar.active {
+      margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+      display: none;
+    }
+  }
+
+  

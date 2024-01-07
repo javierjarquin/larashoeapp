@@ -1,0 +1,83 @@
+<div class="container-fluid">
+  <h1>Productos</h1>
+    <!-- Primera fila -->
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <div class="form-group">
+                <select id="modelId" class="form-select" aria-label="modelos">
+                    <option selected value="">Selecciona un modelo</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Nombre</span>
+                <input id="name" type="text" class="form-control" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon2">Descripción</span>
+                <input id="description" type="text" class="form-control" aria-describedby="basic-addon2">
+            </div>
+        </div>
+    </div>
+    <!-- Segunda fila -->
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <div class="form-group">
+                <select id="typeProduct" class="form-select" aria-label="tipoProductos">
+                    <option value="">Todos los productos</option>
+                    <option value="CA">Calzado</option>
+                    <option value="JU">Juguetes</option>
+                    <option value="MO">Mochilas</option>
+                    <option value="RO">Ropa</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <select id="status" class="form-select" aria-label="estatus">
+                    <option value="">Todos</option>
+                    <option value="AC">Disponibles</option>
+                    <option value="IA">No Disponibles</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <select id="unit" class="form-select" aria-label="unidades de medida">
+                    <option value="">Todos las unidades</option>
+                    <option value="PI">Pieza</option>
+                    <option value="CO">Corrida</option>
+                    <option value="Mochilas">Media Corrida</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="getProduct()">Buscar</button>
+        </div>
+    </div>
+    <table id="productT" data-toggle="table" class="table table-sm container-fluid">
+        <thead class="table-dark">
+            <tr>
+                <th data-field="id" data-width="50">No.</th>
+                <th data-field="modelId" data-formatter="modelformatter" data-width="180">Modelo</th>
+                <th data-field="name">Nombre</th>
+                <th data-field="description">Descripción</th>
+                <th data-field="typeProduct" data-formatter="tpformatter" data-width="180">Tipo de Producto</th>
+                <th data-field="status" data-formatter="statusformatter" data-width="180">Estatus</th>
+                <th data-field="unit" data-formatter="unitformatter" data-width="180">Unidad</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="row align-items-end">
+        <div class="col align-self-end">
+            <button class="btn btn-success" onclick="createProduct()">Agregar Producto</button> 
+            <!-- 
+                Se comenta ya que el servicio no tiene funcionalidad para eliminar marcas
+                <button class="btn btn-danger">Eliminar Marca</button> 
+            -->
+        </div>
+    </div>
+</div>  

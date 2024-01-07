@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <h1>Proveedores</h1>
+ <!-- Primera fila -->
+ <div class="row mb-3">
+    <div class="col-md-3">
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">Nombre Comercial</span>
+            <input id="commercialName" type="text" class="form-control" aria-describedby="basic-addon1">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon2">Nombre Fiscal</span>
+            <input id="fiscalName" type="text" class="form-control" aria-describedby="basic-addon2">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon3">RFC</span>
+            <input id="rfc" type="text" class="form-control" aria-describedby="basic-addon3">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-primary" onclick="getProvider()">Buscar</button>    
+    </div>
+</div>
+</div>
+    <table id="providerT" data-toggle="table" class="table table-sm container-fluid">
+        <thead class="table-dark">
+            <tr>
+                <th data-field="id">No.</th>
+                <th data-field="commercialName">Nombre Comercial</th>
+                <th data-field="fiscalName">Nombre Fiscal</th>
+                <th data-field="rfc">RFC</th>
+                <th data-field="address">Dirección</th>
+                <th data-field="phone">Telefono</th>
+                <th data-field="isCredit" data-formatter="iscreditformatter">Crédito?</th>
+                <th data-field="creditDay">Días de Crédito</th>
+                <th data-field="typeProvider" data-formatter="tproviderformatter">Tipo Proveedor</th>
+                <th data-field="account">Cuenta Bancaria</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="row align-items-end">
+        <div class="col align-self-end">
+            <button class="btn btn-success" onclick="createProvider()">Agregar Proveedor</button> 
+            
+            <!-- 
+                Se comenta ya que el servicio no tiene funcionalidad para eliminar marcas
+                <button class="btn btn-danger">Eliminar Marca</button> 
+            -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<html>
+    <head>
+            <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../node_modules/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" >
+ 
+    </head>
+    <body>
+      <div class="container-fluid d-flex justify-content-center">
+        <form id="fnewbrand">
+            <div class="form-group">
+              <label for="name">Nueva Marca</label>
+              <input type="text" class="form-control" id="name" name="name" aria-describedby="brandHelp" placeholder="Escribe el nombre de la nueva marca">
+              <small id="brandHelp" class="form-text text-muted">Los nombres de las marcas están relacionados a los modelos que vayas creando</small>
+            </div>
+            <br>
+            <div class="text-center">
+            <button class="btn btn-primary" onclick="newBrand()">Guardar</button>
+            <button class="btn btn-danger" onclick="closeBrand()">Cancelar</button>
+          </div>
+          </form>
+      </div>
+          <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>  
+          <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+          <script src="../controller/menu.js"></script>
+          <script src="../controller/brandController.js"></script>
+    </body>
+</html>

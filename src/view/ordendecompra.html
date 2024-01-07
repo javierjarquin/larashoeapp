@@ -1,0 +1,75 @@
+
+<div class="container-fluid">
+    <h1>Ordenes de Compra</h1>
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">Fecha Inicio</span>
+              <input type="date" class="form-control" id="startDate" name="startDate"  aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon2">Alias</span>
+                <input type="text" class="form-control" id="code" name="code" aria-describedby="basic-addon2">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <select id="status" class="form-select" aria-label="estatus">
+                    <option selected value="">Estatus</option>
+                    <option value="PE">En Proceso</option> <!-- Recién creado -->
+                    <option value="AT">Autorizado</option> <!-- Cuando presionan el botón de aprobar -->
+                    <option value="PA">Pagado</option> <!-- cuando presionar Pagado y enviado -->
+                    <option value="EN">Enviado</option> <!-- Cuando empiezan a recibir el pedido -->
+                    <option value="PR">Parcialmente Recibido</option> <!-- Cuando empiezan a recibir el pedido -->
+                    <option value="CM">Completado</option> <!-- cuando se reciben todos los productos de la orden de compra -->
+                    <option value="CA">Cancelada</option> <!-- Cuando se cancela el pedido-->
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon3">Fecha Inicio</span>
+                <input type="date" class="form-control" id="endDate" name="endDate" aria-describedby="basic-addon3">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <select id="providerId" class="form-select" aria-label="proveedores">
+                    <option selected value="">Seleccione un proveedor</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" onclick="getPurchaseOrder()">Buscar</button>
+        </div>
+    </div>
+    <table id="purchaseOrderT" data-toggle="table" class="table table-sm container-fluid" data-click-to-select="true">
+        <thead class="table-dark">
+            <tr>
+                <th data-field="id">No.</th>
+                <th data-field="code">Alias</th>
+                <th data-field="creationDate">Fecha Creación</th>
+                <th data-field="status" data-formatter="statusformatter">Estatus</th>
+                <th data-field="totalOrder">Total</th>
+                <th data-field="guide">Guia</th>
+                <th data-field="totalImport">Envio</th>
+                <th data-field="arrivalDate">Fecha de Envio</th>
+                <th data-field="providerId" data-formatter="providerformatter">Proveedor</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="row align-items-end">
+        <div class="col align-self-end">
+            <button class="btn btn-success" onclick="createOrder()">Crear órden</button> 
+            <!-- 
+                Se comenta ya que el servicio no tiene funcionalidad para eliminar marcas
+                <button class="btn btn-danger">Eliminar Marca</button> 
+            -->
+        </div>
+    </div>
+</div>
